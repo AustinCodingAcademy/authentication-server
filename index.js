@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/UserRoutes");
 const sessionRoutes = require("./routes/SessionRoutes");
 const authMiddleware = require("./services/authentication").authentication;
-const Tweet = require("./models/TweetModel");
+
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
@@ -43,11 +43,7 @@ function startWebServer(){
   app.get("/api/secret", function (req, res) {
     res.send(`The current user is ${req.user.username}`);
   });
-  app.get("/api/tweets", function (req, res) {
-    Tweet.find({userId:req.userId},(err,tweets)=>{
-      res.json(tweets);
-    })
-  });
+
   app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
   });
