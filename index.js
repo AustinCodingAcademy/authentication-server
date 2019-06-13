@@ -49,7 +49,7 @@ function startWebServer(){
   });
 
   //heroku injects the port number into the PORT env value
-  const port = process.env.PORT || 3001;
+  const port = process.env.PORT || 3002;
   app.listen(port, () => {
     console.log(`Listening on port:${port}`);
   });
