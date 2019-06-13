@@ -3,7 +3,7 @@ This project is meant to be an example of how to implement an authentication sys
 
 
 ## Setup
-* fork, clone, npm i, nodemon index.js
+* fork, clone, npm i, nodemon index.js **DONE**
 
 ## Database
 * Make sure you are running a mongoDB database somewhere
@@ -21,7 +21,6 @@ Build the process of signing up for a website. Our simple website will not verif
 * We need to save username and password to the database through mongoose
 * Create a mongoose schema and UserModel with keys username, password
 * Both username and password should probably be required
-
 ### UserController
 * Build the create method. At this time we don't need to find or update users.
 * The username and password should be on the request body
@@ -29,20 +28,20 @@ Build the process of signing up for a website. Our simple website will not verif
 * If username exist `response.send("username already exists")`
 * If username doesn't exist, save the user and `response.send("user created")`
 
-### Test
+### Test **DONE**
 * Use postman to make a POST request to `/api/users`
 * `send a body {"username":"someusername","password":"somepassword"}`
 * What is returned?
 * Send another request with the same body, what is returned?
 
-## Part 2 - Hash
+## Part 2 - Hash **DONE**
 We see that we are saving the password in the database in plain text. Any employee or hacker could steal this information. We need to implement hashing to hide the password.
 
-### UserController
+### UserController **DONE**
 * Change the code to use bcryptjs to hash the password with `hashSync`
 * Save the hashed password to the database instead of plain text
 
-### Test
+### Test **DONE**
 * Use postman to make a POST request to `/api/users`
 * `send a body {"username":"someusername","password":"somepassword"}`
 * Look at your database. What does the password look like?
