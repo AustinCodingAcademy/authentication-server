@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/UserRoutes");
 const sessionRoutes = require("./routes/SessionRoutes");
+const tweetRoutes = require('./routes/TweetRoutes');
 const authMiddleware = require("./services/authentication").authentication;
 
 
@@ -35,6 +36,7 @@ function startWebServer(){
   app.use(bodyParser.json());
   app.use(userRoutes);
   app.use(sessionRoutes);
+  app.use(tweetRoutes);
   app.use(authMiddleware);
     //only logged in users should be able to see this information
   app.get("/api/secretinformation", function (req, res) {
