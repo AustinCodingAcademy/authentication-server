@@ -96,4 +96,3 @@ A user should only be able to access their own data. We need to setup some data 
 * Use postman to make a GET request to `/api/tweets`
 * Include a token in the header `token`
 * Does the server return the data only for the specific user.
-
